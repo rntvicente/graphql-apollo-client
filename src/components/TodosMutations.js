@@ -1,12 +1,18 @@
 import gql from 'graphql-tag';
 
-const Add = gql`
-  mutation AddTodo($text: String!) {
-    addTodo(text: $text) {
+export const CreateTodo = gql`
+  mutation CreateTodo($type: String!) {
+    createTodo(text: $type) {
       id
       text
     }
   }
 `;
 
-export default Add;
+export const UpdateTodo = gql`
+  mutation UpdateTodo($type: ID!) {
+    updateTodo(id: $type) {
+      text
+    }
+  }
+`;

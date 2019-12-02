@@ -1,13 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ApolloProvider } from "@apollo/react-hooks";
+import { BrowserRouter } from 'react-router-dom'
 
 import ApolloClient from './services/Apollo';
 import './index.css';
-import App from './App';
+import App from './components/App';
 
 render(
-  <ApolloProvider client={ApolloClient}>
-    <App />
-  </ApolloProvider>, document.getElementById('root')
+  <BrowserRouter>
+    <ApolloProvider client={ApolloClient}>
+      <App />
+    </ApolloProvider>
+  </BrowserRouter>, document.getElementById('root')
+
 );

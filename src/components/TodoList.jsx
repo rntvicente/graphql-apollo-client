@@ -4,14 +4,10 @@ import { useQuery } from '@apollo/react-hooks';
 
 import Queries from './TodosQueries';
 
-function handlerAddToDo() {
-  console.log('PASSOU AQUI');
-};
-
 function TodoList() {
   const { loading, error, data } = useQuery(Queries);
 
-  if (loading) return 'Loading...';
+  if (loading) return 'Carregando...';
   if (error) return `Error! ${error.message}`;
 
   return (
@@ -23,8 +19,6 @@ function TodoList() {
           );
         })}
       </ul>
-
-      <button onClick={handlerAddToDo}>ADD</button>
     </div>
   );
 }
